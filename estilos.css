@@ -11,29 +11,33 @@ body{
 .contenedor{
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 10px 20px;
+    position: center;
+    margin-top: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    background-color: aquamarine;
+    border-radius: 15px;
+    transition: all 500ms;
+  
 }
-.logincontenedor{
+.registro{
     display: flex;
-    width: 650px;
+    width:100%;
     height: auto;
-    background: coral;
+    background: rgb(241, 204, 191);
+    padding: 20px 40px;
+    position: relative;
     box-shadow: 0 1px, 1px 0 rgba(0, 0, 0, .2);
 
 }
 .registro,.login{
     flex: 1;
 }
-.registro{
-    padding: 30px;
-    position: relative;
-}
+
 .registro h2{
     color: #797979;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .registro input{
     width: 100%;
@@ -51,7 +55,7 @@ body{
     outline: none;
 }
 .registro .submit{
-    width: auto;
+    width: 100%;
     padding: 10px;
     background:#f17108;
     color:#fff;
@@ -59,19 +63,16 @@ body{
     box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
     cursor: pointer;
 }
-.register::after{
-    content: '&amp;gt;';
+.registro::after{
     position: absolute;
-    width: 25px;
+    width: 100%;
     height: 25px;
     top: 50%;
     right: -23px;
-    padding: 10px;
+    padding: 80px 20px;
     text-align: center;
-    font-size: 19px;
+    font-size: 16px;
     background: #f1f1f1;
-    border-radius: 50%;
-    transform: translateY(-50%);
     box-shadow: -1px 1px 3px 1px rgba(0, 0, 0, .2);
     color: #7c7c7c;
   }
@@ -90,14 +91,28 @@ body{
     top: 12px; 
     left: 12px;
   }
+  .login input{
+    width:80px;
+    padding: 5px;
+    position: absolute;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 1px solid #a8a8a8;
+    color: #333;
+  } 
   .login button{
-    width: 100%;
+    width: 250px;
     margin: 15px 0px;
     padding: 5px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+    margin-top: auto;
     cursor: pointer;
     position: relative;
   }
+  /* acceder con usuario*/
   .login .user{
     background: #3b5999;
     border-style: none;
@@ -120,20 +135,24 @@ body{
     border-style: none;
     color: #fff;
   }
-  @media only screen and (max-width: 540px){
-    .login-container{
+ /* @media only screen and (max-width: 240px){
+    .login_items{
       display: block;
-    }
-   
-    .register, .login{
-      flex: none;
-    }
-   
-    .register::after{
+    }*/
+    
+    .registro::after{
       top: unset;
       bottom: -25px;
       left: 50%;
       transform: translateX(-50%) rotate(90deg);
     }
+  .login_items{
+    width: 80px;
+    opacity: 1;
+    display:block;
+  }
+  .iniciar_sesion form {
+    opacity: 1;
+    display: none;
   }
 
