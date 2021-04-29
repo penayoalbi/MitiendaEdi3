@@ -28,9 +28,8 @@ body{
     flex: 1;
 }
 .registro{
-    padding: 40px;
+    padding: 30px;
     position: relative;
-
 }
 .registro h2{
     color: #797979;
@@ -40,7 +39,7 @@ body{
     width: 100%;
     padding: 5px;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-top-style: none;
     border-left-style: none;
     border-right-style: none;
@@ -79,7 +78,7 @@ body{
 
 .login{
     background-image: linear-gradient(to botton right, beige, red);
-    padding: 40px;
+    padding: 30px;
 
 }
 .login h2{
@@ -94,10 +93,15 @@ body{
   .login button{
     width: 100%;
     margin: 15px 0px;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
     cursor: pointer;
     position: relative;
+  }
+  .login .user{
+    background: #3b5999;
+    border-style: none;
+    color: #fff;
   }
   .login .fb{
     background: #3b5999;
@@ -132,3 +136,4 @@ body{
       transform: translateX(-50%) rotate(90deg);
     }
   }
+
