@@ -21,7 +21,7 @@
     </head>
     <body> 
         <div class="contenedor" >
-            <div class="logincontenedor" >
+          <!--  <div class="logincontenedor" >-->
                 <div class="registro" >
                     <form action="method" id="" name="" onsubmit="return validacion()">
                         <h2> Registrarse </h2>
@@ -35,19 +35,21 @@
                 </div>
                 <div class="login">
                     <h2>Inicar Sesión </h2>
-                    <div class="iniciarSesion">
-                        <form action="">
-                        </form>
-                    </div>
-                    <div class="loginitems">
+                        <div class="iniciar_sesion" id="iniciar_sesion">
+                            <form action="">
+                                <input type="text" id="log_usuario" placeholder="ingrese usuario">
+                                <input type="password" id="log_pass" placeholder="ingrese contraseña">
+                                <input type="submit" id="ingresar" value="Ingresar">
+                            </form>
+                        </div>
+                    <div class="login_items">
                         <button class="user"><i class="usuario"></i> Acceder con usuario</button>
                         <button class="fb"><i class="fab fa-facebook-f"></i> Acceder con Facebook</button>
                         <button class="tw"><i class="fab fa-twitter"></i> Acceder con Twitter</button>
                         <button class="correo"><i class="fas fa-envelope"></i> Acceder con Correo</button>
-
                      </div>
                 </div>
-            </div>
+            <!--</div>-->
 
         </div> 
             
