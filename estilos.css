@@ -2,43 +2,161 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
     font-family:'Roboto', sans-serif;
 
 }
 body{
-    background-color: blanchedalmond;
-}
-.contenedor{
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
-    position: center;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    background-color: aquamarine;
-    border-radius: 15px;
-    transition: all 500ms;
+  background-image: url(../EDiTRES/imagen/imagen3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   
 }
-.registro{
-    display: flex;
-    width:100%;
-    height: auto;
-    background: rgb(241, 204, 191);
-    padding: 20px 40px;
+.contenedor-principal{
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+    
+}
+.caja-fondo{
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgb(21, 21, 189,0.3);
+}
+.caja-fondo div{
+  margin: 100% 40px;
+  color: white;
+  transition: all 500ms;
+}
+.caja-fondo div p,
+.caja-fondo div button{
+  margin-top: 30px;
+
+}
+.caja-fondo div h3{
+  font-weight: 400px;
+  font-size: 26px;
+}
+.caja-fondo button{
+  padding: 10px 40px;
+  border: 2px solid seashell;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  transition:  all 30ms;
+}
+.caja-fondo button:hover{
+  background: #fff;
+  color: #55acef;
+}
+.form-login-registro{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  top: -185px;
+  left: 20px;
+}
+.form-login-registro form{
+  width: 100%;
+  padding: 80px 20px;
+  background: #fff;
+  position: absolute;
+  border-radius: 20px;
+
+}
+.form-login-registro form h2{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #f17108;
+}
+.form-login-registro form input{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: rgb(230, 216, 216);
+  font-size: 16px;
+  outline: none;
+}
+.form-login-registro form button{
+  padding:  10px 40px;
+  margin-top: 40px;
+  border: none;
+  font-size:  14px;
+  background: blue;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.form-login{
+  opacity: 1;
+  display: block;
+}
+.form-registro{
+  display: none;
+}
+/* responsi
+*/
+@media screen and (max-width: 850px){
+  main{
+    margin-top: 50px;
+  }
+  .caja-fondo{
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: absolute;
+  }
+  .caja-fondo{
+    margin: 0px;
+    position: absolute;
+  }
+  /* responsi formulario*/
+  .form-login-registro{
+    top: -10px;
+    left: -5px;
+    margin: auto;
+  }
+  .form-login-registro form{
     position: relative;
+  }
+
+
+
+}
+
+/*
+.form-registro{
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    display: flex;  
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
     box-shadow: 0 1px, 1px 0 rgba(0, 0, 0, .2);
+    background: rgb(241, 204, 191);
+
 
 }
-.registro,.login{
-    flex: 1;
-}
 
-.registro h2{
-    color: #797979;
-    margin-bottom: 20px;
-}
 .registro input{
     width: 100%;
     padding: 5px;
@@ -56,7 +174,7 @@ body{
 }
 .registro .submit{
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     background:#f17108;
     color:#fff;
     font-size: 12px;
@@ -77,12 +195,12 @@ body{
     color: #7c7c7c;
   }
 
-.login{
+.form-login{
     background-image: linear-gradient(to botton right, beige, red);
     padding: 30px;
 
 }
-.login h2{
+.form-login h2{
     color: burlywood;
     margin-bottom: 45px;
 }
@@ -91,7 +209,7 @@ body{
     top: 12px; 
     left: 12px;
   }
-  .login input{
+  .form-login input{
     width:80px;
     padding: 5px;
     position: absolute;
@@ -103,7 +221,7 @@ body{
     border-bottom: 1px solid #a8a8a8;
     color: #333;
   } 
-  .login button{
+  .form-login button{
     width: 250px;
     margin: 15px 0px;
     padding: 5px;
@@ -112,25 +230,25 @@ body{
     cursor: pointer;
     position: relative;
   }
-  /* acceder con usuario*/
-  .login .user{
+  /* acceder con usuario
+  .form-login .user{
     background: #3b5999;
     border-style: none;
     color: #fff;
   }
-  .login .fb{
+  .form-login .fb{
     background: #3b5999;
     border-style: none;
     color: #fff;
   }
    
-  .login .tw{
+  .form-login .tw{
     background: #55acef;
     border-style: none;
     color: #fff;
   }
    
-  .login .correo{
+  .form-login .correo{
     background: #33d4ce;
     border-style: none;
     color: #fff;
@@ -138,7 +256,7 @@ body{
  /* @media only screen and (max-width: 240px){
     .login_items{
       display: block;
-    }*/
+    }
     
     .registro::after{
       top: unset;
@@ -150,9 +268,4 @@ body{
     width: 80px;
     opacity: 1;
     display:block;
-  }
-  .iniciar_sesion form {
-    opacity: 1;
-    display: none;
-  }
-
+  }*/

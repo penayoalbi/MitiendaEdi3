@@ -5,54 +5,61 @@
         <title> Mi tienda </title>
         <link rel="Stylesheet" type="text/css" href="estilos.css">
         <script src="main.js" type="text/css"></script>
-
+<!-- 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7R  rhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        -->
-        <!-- Latest compiled and minified CSS -->
+        
+         Latest compiled and minified CSS
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-        <!-- jQuery library -->
+        jQuery library 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
+      Latest compiled JavaScript 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
     </head>
     <body> 
-        <div class="contenedor" >
-          <!--  <div class="logincontenedor" >-->
-                <div class="registro" >
-                    <form action="method" id="" name="" onsubmit="return validacion()">
-                        <h2> Registrarse </h2>
-                        <input type="text" placeholder="nombre y apellido" class="nombre" id="nombre" > <br>
-                        <input type="text" placeholder="correo" class="correo" id="correo"><br>
-                        <input type="text" placeholder="usuario" class="regusuario" id="regUsuario"><br>
-                        <input type="password" placeholder="ingrese password" class="password"><br>
-                        <input type="password" placeholder="Confirmar password" class="repass"><br>
-                        <input type="submit" class="submit" value="REGISTRARSE">
-                    </form>
+        <div class="contenedor-principal" >
+            <div class="caja-fondo" >
+                <div class="caja-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Iniciar sesión para ingresar a la página</p>
+                    <button id="btn-iniciar-sesion">Iniciar Sesión</button>
                 </div>
-                <div class="login">
-                    <h2>Inicar Sesión </h2>
-                        <div class="iniciar_sesion" id="iniciar_sesion">
-                            <form action="">
-                                <input type="text" id="log_usuario" placeholder="ingrese usuario">
-                                <input type="password" id="log_pass" placeholder="ingrese contraseña">
-                                <input type="submit" id="ingresar" value="Ingresar">
-                            </form>
-                        </div>
-                    <div class="login_items">
-                        <button class="user"><i class="usuario"></i> Acceder con usuario</button>
-                        <button class="fb"><i class="fab fa-facebook-f"></i> Acceder con Facebook</button>
-                        <button class="tw"><i class="fab fa-twitter"></i> Acceder con Twitter</button>
-                        <button class="correo"><i class="fas fa-envelope"></i> Acceder con Correo</button>
-                     </div>
-                </div>
-            <!--</div>-->
+                <div class="caja-registro">
+                    <h3>¿No tienes cuenta?</h3>
+                    <p>Registrate  para iniciar sesion</p>
+                    <button id="btn-registro">Registrase</button>
+                </div>    
+            </div>
+            <!--Contiene formulario de login y registro-->
+            <div class="form-login-registro" >
+                    <div class="form-login">
+                        <h2>Inicar Sesión </h2>
+                        <form action="">
+                            <input type="text" id="log_usuario" placeholder="ingrese usuario">
+                            <input type="password" id="log_pass" placeholder="ingrese contraseña">
+                            <button type="submit" id="ingresar" value="Ingresar">Ingresar</button>
+                         </form>
+                     
+                    </div>
+                    <div class="form-registro" >
+                        <form action="method" id="" name="" onsubmit="return validacion()">
+                            <h2> Registrarse </h2>
+                            <input type="text" placeholder="nombre y apellido" class="nombre" id="nombre" > <br>
+                            <input type="text" placeholder="correo" class="correo" id="correo"><br>
+                            <input type="text" placeholder="usuario" class="regusuario" id="regUsuario"><br>
+                            <input type="password" placeholder="ingrese password" class="password"><br>
+                            <input type="password" placeholder="Confirmar password" class="repass"><br>
+                            <button type="submit" class="submit" value="REGISTRARSE">Registrarse</button>
+                        </form>
+                    </div>
+                
 
-        </div> 
-            
+            </div>  
+        </div>    
        
 
     </body>
