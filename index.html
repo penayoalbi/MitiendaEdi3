@@ -4,7 +4,10 @@
         <meta charset="UTF-8">
         <title> Mi tienda </title>
         <link rel="Stylesheet" type="text/css" href="estilos.css">
-        <script src="main.js" type="text/css"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- 
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
@@ -21,17 +24,17 @@
 -->
     </head>
     <body> 
-    <main> 
+    <main class="main">
         <div class="contenedor-principal" >
             <div class="caja-fondo" >
                 <div class="caja-login">
                     <h3>¿Ya tienes una cuenta?</h3>
                     <p>Iniciar sesión para ingresar a la página</p>
-                    <button id="btn-iniciar-sesion">Iniciar Sesión</button>
+                    <button id="btn-iniciarSesion">Iniciar Sesión</button>
                 </div>
                 <div class="caja-registro">
                     <h3>¿No tienes cuenta?</h3>
-                    <p>Registrate  para iniciar sesion</p>
+                    <p>Registrate para iniciar sesion</p>
                     <button id="btn-registro">Registrarse</button>
                 </div>    
             </div>
@@ -39,23 +42,23 @@
             <div class="form-login-registro" >
                     <div class="form-login">
                        
-                        <form action="">
+                        <form action="" >
                             <h2>Inicar Sesión </h2>
-                            <input type="text" id="log_usuario" placeholder="ingrese usuario">
-                            <input type="password" id="log_pass" placeholder="ingrese contraseña">
+                            <input type="text" id="log_usuario" placeholder="Ingrese Usuario">
+                            <input type="password" id="log_pass" placeholder="Ingrese Contraseña">
                             <button id="ingresar" >Ingresar</button>
                          </form>
                      
                     </div>
                     <div class="form-registro" >
-                        <form action="method" id="" name="" onsubmit="return validacion()">
+                        <form action="method" id="" name="" >
                             <h2> Registrarse </h2>
-                            <input type="text" placeholder="nombre y apellido" class="nombre" id="nombre" > <br>
-                            <input type="text" placeholder="correo" class="correo" id="correo"><br>
-                            <input type="text" placeholder="usuario" class="regusuario" id="regUsuario"><br>
-                            <input type="password" placeholder="ingrese password" class="password"><br>
-                            <input type="password" placeholder="Confirmar password" class="repass"><br>
-                            <button   id="Registrarse">Registrarse</button>
+                            <input type="text" placeholder="Ingrese Nombre y Apellido" class="nombre" id="nombre" > <br>
+                            <input type="text" placeholder="Correo" class="correo" id="correo"><br>
+                            <input type="text" placeholder="Usuario" class="regusuario" id="regUsuario"><br>
+                            <input type="password" placeholder="Ingresar Clave" class="password"><br>
+                            <input type="password" placeholder="Confirmar Clave" class="repass"><br>
+                            <button   id="registrarse">Registrarse</button>
                         </form>
                     </div>
                 
@@ -64,5 +67,6 @@
         </div>    
        
     </main>
+    <script src="main.js"></script>
     </body>
 </html>
