@@ -1,4 +1,3 @@
-
 document.getElementById("btn-registro").addEventListener("click",registrar);
 document.getElementById("btn-iniciarSesion").addEventListener("click",iniciarSesion);
 
@@ -22,6 +21,5 @@ function iniciarSesion(){
     form_login.style.display = "block";
     caja_registro.style.opacity = "1" ;//que no se muestre
     caja_login.style.opacity = "0";// que se muestre
-
 }
 

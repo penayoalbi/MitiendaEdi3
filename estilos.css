@@ -11,9 +11,9 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
-  
+  background-attachment: fixed;  
 }
+
 main{
   width: 100%;
   padding: 20px;
@@ -132,7 +132,7 @@ main{
     margin: 0px;
     position: absolute;
   }
-  /* responsi formulario*/
+  /* responsi formulario- Falta terminarlo*/
   .form-login-registro{
     top: -10px;
     left: -5px;
@@ -141,6 +141,4 @@ main{
   .form-login-registro form{
     position: relative;
   }
-
-
 }
