@@ -4,10 +4,9 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family:'Roboto', sans-serif;
-
-}
+  }
 body{
-  background-image: url(../EDiTRES/imagen/imagen3.jpg);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
