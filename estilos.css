@@ -104,17 +104,17 @@ main{
   margin-top: 30px;
   border: none;
   font-size:  14px;
-  background: blue;
+  background: rgba(72, 222, 241, 0.5);
   color: white;
   cursor: pointer;
   outline: none;
 }
 .form-login{
   opacity: 1;
-  display: block;
+  display: none;
 }
 .form-registro{
-  display:none;
+  display:block;
 }
 
 @media screen and (max-width: 850px){

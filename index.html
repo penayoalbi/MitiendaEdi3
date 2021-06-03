@@ -33,7 +33,7 @@
             <!--Contiene formulario de login y registro-->
             <div class="form-login-registro" >
                     <div class="form-login">
-                        <form action="index.php" id="login" name="" method="POST" onsubmit="return validar()">
+                        <form action="index.php" id="login" name="" method="GET" onsubmit="return validar()">
                             <h2>Inicar Sesión </h2>
                             <input type="text" id="log_usuario" placeholder="Ingrese Usuario">
                             <input type="password" id="log_clave" placeholder="Ingrese Contraseña">
@@ -42,14 +42,14 @@
                         </form>
                     </div>
                     <div class="form-registro" >
-                        <form action="method" id="registro" name="" >
+                        <form name="formRegistro" method="POST"  action="registro.php" >
                             <h2> Registrarse </h2>
-                            <input type="text" placeholder="Ingrese Nombre" class="nombre" id="txtnombre" > <br>
-                            <input type="text" placeholder="Ingrese Apellido" class="apellido" id="txtapellido"><br>
-                            <input type="text" placeholder="Correo" class="correo" id="txtcorreo"><br>
-                             <input type="password" placeholder="Ingresar password" id="txtpass"><br>
-                            <input type="password" placeholder="Confirmar password" id="txtrepass"><br>
-                            <button   id="registrarse">Registrarse</button>
+                            <input type="text" placeholder="Ingrese Nombre" name="txtnombre" id="txtnombre" > <br>
+                            <input type="text" placeholder="Ingrese Apellido" name="txtapellido" id="txtapellido"><br>
+                            <input type="text" placeholder="Correo" name="txtcorreo" id="txtcorreo"><br>
+                             <input type="password" placeholder="Ingresar password" name="txtpass" id="txtpass"><br>
+                            <input type="password" placeholder="Confirmar password" name="txtrepass" id="txtrepass"><br>
+                            <button type="submit"  name="registro"  id="registrarse" >Registrarse</button>
                         </form>
                     </div>    
 

@@ -1,12 +1,11 @@
 addEventListener("load",load);
-var miServidor = "/proyetoEdi/back/";
+var miServidor = "/proyetoEdi";
 
 function load(){
     mensajeAlServido(miServidor,cargarRegistro);
 }
 
 function cargarRegistro(){
-
 }
 
 function mensajeAlServido(servidor, funcionArealizar)
