@@ -1,5 +1,4 @@
 <?php
- 
 echo "Hola mundo";
  function crearRegistro(){
     $nombre = $_POST['txtnombre'];

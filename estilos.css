@@ -1,12 +1,11 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family:'Roboto', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family:'Roboto', sans-serif;
+}
 body{
-  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -36,7 +35,7 @@ main{
 }
 .caja-fondo div{
   margin: 100px 40px;
-  color: white;
+  color: rgb(71, 110, 238);
   transition: all 500ms;
 }
 .caja-fondo div p,
@@ -109,14 +108,21 @@ main{
   cursor: pointer;
   outline: none;
 }
+.form-login-registro button:hover{/* cuando pasa el cursor sobre*/
+  background: #fff;
+  color: #55acef;
+}
 .form-login{
   opacity: 1;
-  display: none;
+  display: block;
 }
 .form-registro{
-  display:block;
+  display:none;
 }
-
+main{
+  margin-top: 50px;
+}
+/*
 @media screen and (max-width: 850px){
   main{
     margin-top: 50px;
@@ -132,6 +138,7 @@ main{
     position: absolute;
   }
   /* responsi formulario- Falta terminarlo*/
+  /*
   .form-login-registro{
     top: -10px;
     left: -5px;
@@ -141,3 +148,4 @@ main{
     position: relative;
   }
 }
+*/
