@@ -1,5 +1,5 @@
 addEventListener("load",load);
-var miServidor = "/proyetoEdi";
+var miServidor = "/../ApiProyecto";
 
 function load(){
     mensajeAlServido(miServidor,cargarRegistro);
