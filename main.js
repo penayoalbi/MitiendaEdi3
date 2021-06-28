@@ -1,7 +1,7 @@
 document.getElementById("btn-registro").addEventListener("click",registro);
 document.getElementById("btn-iniciarSesion").addEventListener("click",iniciarSesion);
 document.getElementById("ingresar").addEventListener("click",validar);
-document.getElementById("registrar").addEventListener("click",validarCampos);
+//document.getElementById("registrar").addEventListener("click",validarCampos);
 //addEventListener("load",validar);
 var form_registro=document.querySelector(".form-registro");
 var form_login_registro=document.querySelector(".form-login-registro");
@@ -61,11 +61,12 @@ function validarVacio(valor){
     }*/
     var valor = valor;
     if(valor==""){
-        return false;
-    }else{
         return true;
+    }else{
+        return false;
     }
 }
+/*
 function validarCampos(){
     var expCorreo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var nom=document.getElementById("txtnombre").value;
@@ -74,22 +75,20 @@ function validarCampos(){
     var pass = document.getElementById("txtpass").value;
     var repass = document.getElementById("txtrepass").value;
 
-    if(validarVacio(nom)==false || validarVacio(apellido)==false|| validarVacio(correo)==false|| validarVacio(pass)==false|| validarVacio(repass)==false){
+    if(validarVacio(nom)|| validarVacio(apellido)|| validarVacio(correo)|| validarVacio(pass)|| validarVacio(repass)){
         alert("Los Campos no deben quedar vacios");
+        return false;
     }else if(!correo.match(expCorreo))
     {
         alert("Error: La dirección de correo "+correo+" es incorrecta.");
+        return false;
     }else if(!pass=== repass){
         alert("Los campos del password no coinciden");
+        return false;
     }else{
         return true;
     }
 
-   /*
-    window.onload = function(){
-        var conten = document.getElementById("contenedor");
-        conten.style.visibility ='hidden';
-        conten.style.opacity = '0';
-    }*/
 }
+*/
 

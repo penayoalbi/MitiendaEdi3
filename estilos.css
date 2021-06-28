@@ -11,7 +11,7 @@ body{
   background-position: center;
   background-attachment: fixed;  
 }
-
+/*
 main{
   width: 100%;
   padding: 20px;
@@ -44,7 +44,8 @@ main{
 
 }
 .caja-fondo div h3{
-  font-weight: 400;/*menos grosor*/
+  font-weight: 400;
+
   font-size: 26px;
 }
 .caja-fondo button{
@@ -58,11 +59,12 @@ main{
   outline: none;
   transition:  all 300ms;
 }
-.caja-fondo button:hover{/* cuando pasa el cursor sobre*/
+.caja-fondo button:hover{/* cuando pasa el cursor sobre
   background: #fff;
   color: #55acef;
 }
 /*formularios*/
+/*
 .form-login-registro{
   display: flex;
   align-items: center;
@@ -108,11 +110,12 @@ main{
   cursor: pointer;
   outline: none;
 }
-.form-login-registro button:hover{/* cuando pasa el cursor sobre*/
+.form-login-registro button:hover{/* cuando pasa el cursor sobre*//*
   background: #fff;
   color: #55acef;
-}
-.form-login{
+}*/
+/* cambie el nombre  con --*/ 
+.form--login{
   opacity: 1;
   display: block;
 }
@@ -149,3 +152,8 @@ main{
   }
 }
 */
+
+.form--login  button:hover{
+  background: #fff;
+  color: #55acef;
+}

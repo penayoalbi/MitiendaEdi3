@@ -32,30 +32,29 @@
             <!--Contiene formulario de login y registro-->
             <div class="form-login-registro col-sm-3 col-md-6 " >
                     <div class="form-login ">
-                         <!--form inicio de sesión-->
+                         <!--inicio de sesión-->
                         <form action="" id="login" name="" method="GET" onsubmit=" return validar()">
                             <h2>Inicar Sesión </h2>
                             <input type="text" id="log_usuario" placeholder="Ingrese Usuario">
                             <input type="password" id="log_clave" placeholder="Ingrese password">
-                            <button type="submit" id="ingresar"><a href="">Ingresar </a></button>
+                            <button type="submit" id="ingresar">Ingresar </a></button>
 
                             <div id="resultado"> </div>
                         </form>
                     </div>
                     <div class="form-registro col-dm-6  col-sm-12 " >
-                         <!--form registrarse-->
-                         <!-- /../ApiProyecto/registro.php -->
-                        <form name="formRegistro" method="POST" action="" onsubmit = "return validarCampos()" >
+                         <!--registrarse-->
+                         <!-- /../ApiProyecto/registro.php  onsubmit = "return validarCampos()" -->
+                        <form method="POST" action="" name="formRegistro" onsubmit = "return cargarRegistro()"  >
                             <h2> Registrarse </h2>
-                            <input type="text" placeholder="Ingrese Nombre" name="txtnombre" id="txtnombre" > <br>
-                            <input type="text" placeholder="Ingrese Apellido" name="txtapellido" id="txtapellido"><br>
-                            <input type="text" placeholder="Correo" name="txtcorreo" id="txtcorreo"><br>
-                            <input type="password" placeholder="Ingresar password" name="txtpass" id="txtpass"><br>
-                            <input type="password" placeholder="Confirmar password" name="txtrepass" id="txtrepass"><br>
+                            <input type="text" placeholder="Ingrese Nombre" name="txtNombre" id="txtNombre"  required > <br>
+                            <input type="text" placeholder="Ingrese Apellido" name="txtApellido" id="txtApellido" required><br>
+                            <input type="text" placeholder="Correo" name="txtCorreo" id="txtCorreo" required><br>
+                            <input type="text" placeholder="Ingresar usuario" name="txtUsuario" id="txtUsuario" required ><br>
+                            <input type="password" placeholder="Confirmar password" name="txtPass" id="txtpass" required><br>
                             <button type="submit"  name="registrar"  id="registrar">Registrarse</button>
                         </form>
-                    </div>    
-
+                    </div> 
                 </div>  
             </div>    
         </div>

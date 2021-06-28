@@ -11,6 +11,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
         <style>
             .header{
                 background-color: aquamarine;
@@ -38,74 +39,97 @@
         </style>
     </head>
     <body>
-        <div class="row">
-            <div class="header">
-                <div class="container">
-                    <div class="col-sm-12">
-                        <div class="row hidden-xs" >
-                            <div class="tienda col-md-6 col-sm-4">
-                                <h1>
-                                    <a href="#" >Mi tienda</a>
-                                </h1>
-                            </div >
-                            <div class="nav col-sm-8 col-md-6">
-                                <div class="row">
-                                    <div class="cuenta col-sm-12 ">
-                                        <div class="micuenta right">
-                                            <a href="index.html" id="" >Mi cuenta</a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="header">
+                    <div class="navbar navbar-dark bg-dark">
+                        <div class="col-sm-12">
+                            <div class="row hidden-xs" >
+                                <div class="tienda col-md-6 col-sm-4">
+                                    <h1>
+                                        <a  class="row justify-content-center" href="#" >Mi tienda</a>
+                                    </h1>
+                                </div >
+                                <div class="navbar navbar-brand col-sm-8 col-md-6">
+                                    <div class="row">
+                                        <div class="cuenta col-sm-12 ">
+                                            <div class="micuenta right">
+                                                <a href="login.html" id="" >Mi cuenta</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-buttons">
+                                        <div class="col-sm-3">
+                                            <a href="" class="button">Home</a>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="" class="button">Productos</a>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <a href="" class="button">Mi compra</a>
+                                        </div>
+                                        <div class="local col-sm-2">
+                                            <a href="locales.html" >Locales</a> 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row-buttons">
-                                    <div class="col-sm-3">
-                                        <a href="" class="button">Cambios</a>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <a href="" class="button">Contactos</a>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <a href="" class="button">Mi compra</a>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <a href="" class="button">Envio</a>
-                                    </div>
-                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card my-4" id="task-result">
+                              <div class="card-body">
+                                <!-- SEARCH -->
+                                <ul id="container"></ul>
+                              </div>
                             </div>
-                        </div>  
-                    </div>
+                        <table class="table table-bordered table-sm">
+                            <thead>
+                              <tr>
+                                <td>Id</td>
+                                <td>Name</td>
+                                <td>Description</td>
+                              </tr>
+                            </thead>
+                            <tbody id="tasks"></tbody>
+                          </table>
+
+                        </div>
+                    </div> <!-- 
+                        <div class="container2">
+                        <div class="row col-sm-8 ">
+                            <div class="stero col-sm-2">  
+                                <a href="">STORE</a>
+                            </div>
+                            <div class="promo col-sm-2">
+                                <a href="" >PROMOCIONES</a>
+                            </div>
+                            <div class="look col-sm-2">
+                                <a href="" >LOOKBOOK</a>
+                            </div>
+                            <div class="local col-sm-2">
+                                <a href="locales.html" >LOCALES</a> 
+                            </div>
+                        </div>
+                        <div class="buscar col-sm-2 ">
+                            <input type="search" placeholder="Buscar">
+                            <input type="button" value="Buscar">
+                        </div>-->
+                    </div>  
                 </div>
-                    <div class="container2">
-                    <div class="row col-sm-8 ">
-                        <div class="stero col-sm-2">  
-                            <a href="">STORE</a>
-                        </div>
-                        <div class="promo col-sm-2">
-                            <a href="" >PROMOCIONES</a>
-                        </div>
-                        <div class="look col-sm-2">
-                            <a href="" >LOOKBOOK</a>
-                        </div>
-                        <div class="local col-sm-2">
-                            <a href="locales.html" >LOCALES</a> 
-                        </div>
-                    </div>
-                    <div class="buscar col-sm-2 ">
-                        <input type="search" placeholder="Buscar">
-                        <input type="button" value="Buscar">
-                    </div>
-                </div>  
-            </div>
              
-        </div> 
+            </div> 
+        </div>
         <hr>
         <div class="row col-md-8">Apartado 1 </div>
         <div class="row col-md-4">Apartador 2</div>
         <footer class="col-md-12">
             <h3>Pie de página</h3>
+            <!-- 
             <div class="row col-sm-3">row1</div>
             <div class="row col-sm-3">row2</div>
             <div class="row col-sm-3">row3</div>
             <div class="row col-sm-3">row4</div>
+            -->
         </footer>
     </body>
 </html>
