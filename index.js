@@ -4,13 +4,11 @@ var miServidor ="http://localhost:666/";
 
 function load(){
   //  mensajeAlServido(miServidor,cargarRegistro);
-   // mensajeAlServido(miServidor,Login);
+   mensajeAlServido(miServidor,funcionArealizar);
    // $("registrar").addEventListener("click",cargarRegistro);
    document.getElementById("btnIngresar").addEventListener("click",Login);
-   document.getElementById("btnNuevoUsuario").addEventListener("onload",CrearUsuario);
-    
 }
-
+//document.getElementById("btnNuevoUsuario").addEventListener("click",CrearUsuario);
 
 function funcionArealizar(){
   //  console.log(xmlhttp);
@@ -18,13 +16,16 @@ function funcionArealizar(){
 
 function Login (miServidor, funcionArealizar)
 {
+    var usuario= document.getElementById("txtNombre");
+    var pass = document.getElementById("txtPass");
     console.log("login usuario");
-    var xmlhttp = new XMLHttpRequest();
+   
     var datos = new FormData();
-    datos.append("usuario",$("txtnombre").value);
-    datos.append("pass",$("txtPass").value);
+    datos.append(usuario,pass);
+
+    var xmlhttp = new XMLHttpRequest();
 //donde se envia el msj
-    xmlhttp.open("post",'http://localhost:666/', true);
+    xmlhttp.open("post",miServidor, true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -32,7 +33,9 @@ function Login (miServidor, funcionArealizar)
             //Reviso si la respuesta es correcta
             if (xmlhttp.status == 200) {
                 window.location("principal.html");
-               funcionArealizar(xmlhttp.responseText);
+               alert(xmlhttp.responseText);
+               var objeto= new FormData();
+                objeto.append(xmlhttp);
 
             }
             else {
@@ -53,10 +56,10 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
 {
     var xmlhttp = new XMLHttpRequest();
     var datos = new FormData();
-    datos.append("usuario",$("txtnombre").value);
+    datos.append("usuario",$("txtNombre").value);
     datos.append("pass",$("txtPass").value);
 
-    xmlhttp.open('post','http://localhost:666/', true);
+    xmlhttp.open('post',miServidor, true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -112,7 +115,7 @@ function CrearUsuario(miServidor,funcionArealizar){
     xmlhttp.onreadystatechange = function(){
         if(xmlhttp.readyState ==XMLHttpRequest.DONE){
             if(xmlhttp.status==200){
-                //funcionArealizar(xmlhttp.responseText);
+                funcionArealizar(xmlhttp.responseText);
                 alert(xmlhttp.responseText);
             }else{
                 alert("Error ");
