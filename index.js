@@ -1,56 +1,21 @@
-addEventListener("load",load);
-//var servidor = "https://ApiProyecto.herokuapp.com/Mitienda"
-var miServidor ="http://localhost:666/";
+addEventListener("load",load)
+var servidor = "https://apipenayo.herokuapp.com"
+//var miServidor ="http://localhost:666";
 
 function load(){
-  //  mensajeAlServido(miServidor,cargarRegistro);
-   mensajeAlServido(miServidor,funcionArealizar);
-   // $("registrar").addEventListener("click",cargarRegistro);
-   document.getElementById("btnIngresar").addEventListener("click",Login);
+   //mensajeAlServido(miServidor,funcionArealizar);
+   //$("registrar").addEventListener("click",cargarRegistro);
+ document.getElementById("btnIngresar").addEventListener("click",login);
 }
-//document.getElementById("btnNuevoUsuario").addEventListener("click",CrearUsuario);
-
+/*
 function funcionArealizar(){
   //  console.log(xmlhttp);
-}
+}*/
 
-function Login (miServidor, funcionArealizar)
+function login(miServidor, funcionArealizar)
 {
-    var usuario= document.getElementById("txtNombre");
-    var pass = document.getElementById("txtPass");
-    console.log("login usuario");
-   
-    var datos = new FormData();
-    datos.append(usuario,pass);
-
-    var xmlhttp = new XMLHttpRequest();
-//donde se envia el msj
-    xmlhttp.open("post",miServidor, true);
-     //seteo el evento
-     xmlhttp.onreadystatechange = function () {
-        //Veo si llego la respuesta del servidor
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-            //Reviso si la respuesta es correcta
-            if (xmlhttp.status == 200) {
-                window.location("principal.html");
-               alert(xmlhttp.responseText);
-               var objeto= new FormData();
-                objeto.append(xmlhttp);
-
-            }
-            else {
-                alert("ocurrio un error");
-            }
-        }
-    }
-//definimos que enviamos
-   //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-    //envio el mensaje    
-  //  var objeto= new FormData();
-   // objeto.append(responseText);
-    xmlhttp.send(datos);
+   EnviarMensajeServidor(miServidor,funcionArealizar);
 }
-
 
 function EnviarMensajeServidor (miServidor, funcionArealizar)
 {
@@ -59,7 +24,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
     datos.append("usuario",$("txtNombre").value);
     datos.append("pass",$("txtPass").value);
 
-    xmlhttp.open('post',miServidor, true);
+    xmlhttp.open('post',"http://localhost:666/usuario", true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -67,25 +32,24 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
             //Reviso si la respuesta es correcta
             if (xmlhttp.status == 200) {
                 funcionArealizar(xmlhttp.responseText);
-
+            
             }
             else {
                 alert("ocurrio un error");
+            
             }
         }
     }
-   // xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-
-    var objeto= new FormData();
-    objeto.append(responseText);
-
-    //envio el mensaje    
-    xmlhttp.send();
+   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  // xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+ 
+    //envio el mensaje  
+    xmlhttp.send( );
 }
-
+/*
 function BuscarProducto(){
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('post',miServidor,true);
+    xmlhttp.open('post','http://localhost:666/Producto',true);
 
     xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == XMLHttpRequest.DONE) {
@@ -99,9 +63,10 @@ function BuscarProducto(){
     }
 
     xmlhttp.send();
-
 }
 }
+*/
+/*
 function CrearUsuario(miServidor,funcionArealizar){
     var reg = new FormData();
     reg.append("nombre",$("txtNombre").value);
@@ -122,9 +87,10 @@ function CrearUsuario(miServidor,funcionArealizar){
             }
         }
     }
-   // xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
     xmlhttp.send(reg);
 }
+*/
 /*
 function enviarLogin(){
     $("#form-login").on("submit", function(e){
