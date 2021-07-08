@@ -24,7 +24,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
     datos.append("usuario",$("txtNombre").value);
     datos.append("pass",$("txtPass").value);
 
-    xmlhttp.open('post',"http://localhost:666/usuario", true);
+    xmlhttp.open('post',servidor, true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -41,7 +41,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
         }
     }
    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  // xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+   xmlhttp.setRequestHeader("enctype", "multipart/form-data");
  
     //envio el mensaje  
     xmlhttp.send( );
