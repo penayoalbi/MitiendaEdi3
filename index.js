@@ -1,6 +1,6 @@
 addEventListener("load",load)
-var miServidor = "https://apipenayo.herokuapp.com"
-//var miServidor ="http://localhost:666";
+//var miServidor = "https://apipenayo.herokuapp.com"
+var miServidor ="http://localhost:666";
 
 function load(){
    //mensajeAlServido(miServidor,funcionArealizar);
@@ -24,7 +24,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
     datos.append("usuario",$("txtNombre").value);
     datos.append("pass",$("txtPass").value);
 
-    xmlhttp.open('post',miServidor, true);
+    xmlhttp.open('post',"http://localhost:666/usuario", true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -115,38 +115,7 @@ function enviarLogin(){
     });
 
 }
-/*
-$(function(){
-    $("#formulario_contacto").on("submit", function(e){
-            processData: false,
-            beforeSend: function() {
-              $('.msg').html("<img src='img/ajax-loader.gif' />");
-            },
-        })
- 
-        // Cuando el formulario es enviado, mostramos un mensaje en la vista HTML 
-        // En el archivo enviarcorreo.php devuelvo el valor '1' el cual es procesado con jQuery Ajax 
-        // y significa que el mensaje se envio satisfactoriamente. 
-        .done(function (res) {                  
- 
-          if(res.a == "1"){
-                    
-            // Mostramos el mensaje 'Tu Mensaje ha sido enviado Correctamente !' 
-            $(".msg").html(res.b);                   
-            $("#formulario_contacto").trigger("reset");    
- 
-          }  else {                                       
-            $(".msg").html(res.b); 
-          }
-                                                      
-        })
- 
-        // Mensaje de error al enviar el formulario 
-        .fail(function (res) {                    
-            $(".msg").html(res.b);
-        });
- 
-    });
+
 });
 */
 
