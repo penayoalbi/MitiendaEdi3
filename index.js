@@ -1,5 +1,5 @@
 addEventListener("load",load)
-var servidor = "https://apipenayo.herokuapp.com"
+var miServidor = "https://apipenayo.herokuapp.com"
 //var miServidor ="http://localhost:666";
 
 function load(){
@@ -24,7 +24,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
     datos.append("usuario",$("txtNombre").value);
     datos.append("pass",$("txtPass").value);
 
-    xmlhttp.open('post',servidor, true);
+    xmlhttp.open('post',miServidor, true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
