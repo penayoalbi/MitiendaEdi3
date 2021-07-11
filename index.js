@@ -1,42 +1,41 @@
 addEventListener("load",load)
-//var miServidor = "https://apipenayo.herokuapp.com"
-var miServidor ="http://localhost:666";
+var miServidor = "https://apipenayo.herokuapp.com"
+//var miServidor ="http://localhost:666";
 
 function load(){
    //mensajeAlServido(miServidor,funcionArealizar);
-   //$("registrar").addEventListener("click",cargarRegistro);
  document.getElementById("btnIngresar").addEventListener("click",login);
+ //document.getElementById("btnRegistrar").addEventListener("click",EnviarMensajeServidor);
+ 
+}
+function funcionArealizar(){
+   console.log(xmlhttp);
 }
 /*
-function funcionArealizar(){
-  //  console.log(xmlhttp);
-}*/
-
 function login(miServidor, funcionArealizar)
 {
    EnviarMensajeServidor(miServidor,funcionArealizar);
 }
-
-function EnviarMensajeServidor (miServidor, funcionArealizar)
+*/
+function login (miServidor, funcionArealizar)
 {
     var xmlhttp = new XMLHttpRequest();
     var datos = new FormData();
-    datos.append("usuario",$("txtNombre").value);
-    datos.append("pass",$("txtPass").value);
+    datos.append('nombre',$('nombre').value);
+    datos.append('clave',$('clave').value);
 
-    xmlhttp.open('post',"http://localhost:666/usuario", true);
+    xmlhttp.open('get',miServidor+'/usuario/login', true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {
             //Reviso si la respuesta es correcta
             if (xmlhttp.status == 200) {
-                funcionArealizar(xmlhttp.responseText);
-            
+                //funcionArealizar(xmlhttp.responseText);
+                 console.log( xmlhttp.responseText);   
             }
             else {
                 alert("ocurrio un error");
-            
             }
         }
     }
@@ -44,7 +43,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
  
     //envio el mensaje  
-    xmlhttp.send( );
+    xmlhttp.send(datos);
 }
 /*
 function BuscarProducto(){
@@ -66,31 +65,37 @@ function BuscarProducto(){
 }
 }
 */
-/*
-function CrearUsuario(miServidor,funcionArealizar){
-    var reg = new FormData();
-    reg.append("nombre",$("txtNombre").value);
-    reg.append("correo",$("txtCorreo").value);
-    reg.append("pass",$("txtPass").value);
-    
+
+function EnviarMensajeServidor (miServidor, funcionArealizar)
+{
     var xmlhttp = new XMLHttpRequest();
+    var datos = new FormData();
+    datos.append('nombre',$('nombre').value);
+    datos.append('nombre',$('correo').value);
+    datos.append('clave',$('clave').value);
 
-    xmlhttp.open("POST","http://localhost:666/Usuario",true);
-
-    xmlhttp.onreadystatechange = function(){
-        if(xmlhttp.readyState ==XMLHttpRequest.DONE){
-            if(xmlhttp.status==200){
-                funcionArealizar(xmlhttp.responseText);
-                alert(xmlhttp.responseText);
-            }else{
-                alert("Error ");
+    xmlhttp.open('post',miServidor+'/usuario/new', true);
+     //seteo el evento
+     xmlhttp.onreadystatechange = function () {
+        //Veo si llego la respuesta del servidor
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+            //Reviso si la respuesta es correcta
+            if (xmlhttp.status == 200) {
+                //funcionArealizar(xmlhttp.responseText);
+                 console.log( xmlhttp.responseText);   
+            }
+            else {
+                alert("ocurrio un error");
             }
         }
     }
-    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-    xmlhttp.send(reg);
+   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+ 
+    //envio el mensaje  
+    xmlhttp.send(datos);
 }
-*/
+
 /*
 function enviarLogin(){
     $("#form-login").on("submit", function(e){
@@ -111,7 +116,6 @@ function enviarLogin(){
                     alert("ocurrio un error");
                 }
             }
-    
     });
 
 }
