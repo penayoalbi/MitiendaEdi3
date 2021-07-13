@@ -1,6 +1,6 @@
 addEventListener("load",load);
-var miServidor = "https://apipenayo.herokuapp.com"
-//var miServidor ="http://localhost:666/usuario";
+//var miServidor = "https://apipenayo.herokuapp.com"
+var miServidor ="http://localhost:666";
 
 function load(){
     //mensajeAlServido(miServidor,funcionArealizar);
@@ -19,7 +19,7 @@ function login (miServidor, funcionArealizar)
     datos.append('nombre',$('nombre').value);
     datos.append('clave',$('clave').value);
 //'http://localhost:666/usuario/login'
-    xmlhttp.open('get',miServidor, true);
+    xmlhttp.open('get','http://localhost:666/usuario/login', true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -36,13 +36,12 @@ function login (miServidor, funcionArealizar)
             }
         }
     }
-   //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.setRequestHeader("enctype", "multipart/form-data");
     //envio el mensaje  
     xmlhttp.send(datos);
 }
-
-
+/*
 //crear usuario
 function EnviarMensajeServidor (miServidor, funcionArealizar)
 {
@@ -52,7 +51,7 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
     datos.append('nombre',$('correo').value);
     datos.append('clave',$('clave').value);
 //'http://localhost:666/usuario/new'
-    xmlhttp.open('post',miServidor, true);
+    xmlhttp.open('post','http://localhost:666/usuario/new', true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -61,28 +60,29 @@ function EnviarMensajeServidor (miServidor, funcionArealizar)
             if (xmlhttp.status == 200) {
                 //funcionArealizar(xmlhttp.responseText);
                  console.log( xmlhttp.responseText);   
+                 document.getElementById('respuesta').innerHTML=xmlhttp.responseText;
             }
             else {
                 alert("ocurrio un error");
             }
         }
     }
-  // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
  
     //envio el mensaje  
     xmlhttp.send(datos);
 }
-
+*/
 $('#registro').click(function(e){
     console.log('click en registro');
     var xmlhttp = new XMLHttpRequest();
-    var registro = new FormData();
-    registro.append('nombre',$('nombre').value);
-    registro.append('nombre',$('correo').value);
-    registro.append('clave',$('clave').value);
+    var datos = new FormData();
+    datos.append('nombre',$('nombre').value);
+    datos.append('correo',$('correo').value);
+    datos.append('clave',$('clave').value);
     //'http://localhost:666/usuario/new'
-    xmlhttp.open('post',miServidor, true);
+    xmlhttp.open('post','http://localhost:666/usuario/new', true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
        //Veo si llego la respuesta del servidor
@@ -90,19 +90,19 @@ $('#registro').click(function(e){
            //Reviso si la respuesta es correcta
            if (xmlhttp.status == 200) {
                //funcionArealizar(xmlhttp.responseText);
-                console.log( xmlhttp.responseText);   
+                console.log( xmlhttp.responseText);  
+                document.getElementById('respuesta').innerHTML=xmlhttp.responseText; 
            }
            else {
                alert("ocurrio un error");
+               document.getElementById('respuesta').innerHTML=xmlhttp.responseText;
            }
        }
    }
- // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-
    //envio el mensaje  
-   xmlhttp.send(registro);
-
+   xmlhttp.send(datos);
 });
 
 

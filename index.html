@@ -10,8 +10,9 @@
         -->
         <!--  jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
+        <!-- Latest compiled JavaScript 
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       -->
        <!-- bootswatch-->
        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     
@@ -68,8 +69,8 @@
                                 </div>
                                 <div class="form-group">
                                     <input id="descripcion"class="form-control"> 
-                                </div>
-                                <input type="hidden" id="idnom" placeholder="hiden">
+                                </div><br>
+                                <input type="hidden" id="idnom">
                                 <button type="submit" class=" btn btn-primary btn-block text-center"> Guardar</button>
                             </form>   
                         </div>
@@ -77,10 +78,10 @@
                 </div>
                 <!-- tabla de la busqueda-->
                 <div class="col-md-7">
-                    <div class="card my-4" id="resultado">
+                    <div class="card my-4" id="rs-buscar">
                         <div class="card-body">
                             <!-- resultado de busqueda-->
-                            <ul class="contenedor"></ul>
+                            <ul  id="contenedor"></ul>
                         </div>
                     </div>
                     <table class="table table-bordered table-sm">
@@ -98,6 +99,9 @@
                             <td></td>
                             <td>  
                                 <input type="button" value="Borrar">
+                            </td>
+                            <td>  
+                                <input type="button" value="Editar">
                             </td>
                         </tr>
                        
@@ -128,16 +132,17 @@
      
        
 
-<div class="row col-md-8">Apartado 1 </div>
-    <div class="row col-md-4">Apartador 2</div>
-    <footer class="col-md-12">
-     <h5>footer</h5>
-    <!-- 
-        <div class="row col-sm-3">row1</div>
-        <div class="row col-sm-3">row2</div>
-         <div class="row col-sm-3">row3</div>
-        <div class="row col-sm-3">row4</div>
-        -->
-    </footer>
+        <div class="row col-md-8">Apartado 1 </div>
+        <div class="row col-md-4">Apartador 2</div>
+    <script src="producto.js"></script>
     </body>
+    <footer class="col-md-12">
+        <h5>footer</h5>
+       <!-- 
+           <div class="row col-sm-3">row1</div>
+           <div class="row col-sm-3">row2</div>
+            <div class="row col-sm-3">row3</div>
+           <div class="row col-sm-3">row4</div>
+           -->
+    </footer>
 </html>
