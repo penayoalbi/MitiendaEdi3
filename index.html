@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+       <!--<meta charset="UTF-8"> --> 
         <title>Mi Tienda</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
         crossorigin="anonymous">
-        <!-- Latest compiled and minified CSS-->
+        <!-- Latest compiled and minified CSS
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        -->
         <!--  jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       <!-- bootswatch-->
+       <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     
-        <style>
+        <style>/*
             .header{
                 background-color: aquamarine;
             }
@@ -22,10 +25,7 @@
             .tienda{
                 background-color: thistle;
             }
-            .buscar button:hover{
-                cursor: pointer;
-                outline: none;  
-            }
+          
             .row-buttons a{
                 line-height-step : 12px;
                 width: 20px;
@@ -35,110 +35,109 @@
             .cuenta{
                 background-color: wheat;
                 text-align: right ;
-            }
+            }*/
         </style>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="header">
-                    <div class="navbar navbar-dark bg-dark">
-                        <div class="col-sm-12">
-                            <div class="row hidden-xs" >
-                                <div class="tienda col-md-6 col-sm-4">
-                                    <h1>
-                                        <a  class="row justify-content-center" href="#" >Mi tienda</a>
-                                    </h1>
-                                </div >
-                                <div class="navbar navbar-brand col-sm-8 col-md-6">
-                                    <div class="row">
-                                        <div class="cuenta col-sm-12 ">
-                                            <div class="micuenta right">
-                                                <a href="login.html" id="" >Mi cuenta</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row-buttons">
-                                        <div class="col-sm-3">
-                                            <a href="" class="button">Home</a>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <a href="" class="button">Productos</a>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <a href="" class="button">Mi compra</a>
-                                        </div>
-                                        <div class="local col-sm-2">
-                                            <a href="locales.html" >Locales</a> 
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div>
-                                           <input type="search" id="buscar">
-                                           <input type="submit" class="btn btn-danger"  id="btnBuscar" value="Buscar">
-                                        </div>
-                                    </div>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <h1>
+                <a  class="navbar-brand justify-content-center" href="#"> Mi tienda</a>
+            </h1>
+            <div class="micuenta right">
+                <a href="login.html" id="" >Mi cuenta</a>
+            </div>
+           
+                <ul class="navbar-nav ml-auto">
+                    <form class="form-inline my-2 my-lg-0">
+                       <!-- Buscar -->
+                        <input type="search" id="buscar" placeholder="Buscar producto..." class="form-control mr-sm-2">
+                        <input type="submit" class="btn btn-success my-2 my-sm-0"  id="btnBuscar" value="Buscar">
+                    </from>
+                </ul>
+        </nav>
 
-                                    <div class="col-md-7">
-                                        <div class="card my-4" id="task-result">
-                                            <div class="card-body">
-                                                <!-- Buscar -->
-                                                <ul id="container"></ul>
-                                            </div>
-                                        </div>
-                                        <table class="table table-bordered table-sm">
-                                            <thead>
-                                            <tr>
-                                                <td>Id</td>
-                                                <td>Name</td>
-                                                <td>Description</td>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="tasks"></tbody>
-                                        </table>
-            
-                                    </div>
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- form agregar -->
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" name="" id="nombre" class="form-control">
                                 </div>
-                            </div>
-                      
+                                <div class="form-group">
+                                    <input id="descripcion"class="form-control"> 
+                                </div>
+                                <input type="hidden" id="idnom" placeholder="hiden">
+                                <button type="submit" class=" btn btn-primary btn-block text-center"> Guardar</button>
+                            </form>   
                         </div>
-                        
-                    </div> <!-- 
-                        <div class="container2">
-                        <div class="row col-sm-8 ">
-                            <div class="stero col-sm-2">  
-                                <a href="">STORE</a>
-                            </div>
-                            <div class="promo col-sm-2">
-                                <a href="" >PROMOCIONES</a>
-                            </div>
-                            <div class="look col-sm-2">
-                                <a href="" >LOOKBOOK</a>
-                            </div>
-                            <div class="local col-sm-2">
-                                <a href="locales.html" >LOCALES</a> 
-                            </div>
-                        </div>
-                        <div class="buscar col-sm-2 ">
-                            <input type="search" placeholder="Buscar">
-                            <input type="button" value="Buscar">
-                        </div>-->
-                    </div>  
+                    </div>
                 </div>
-             
-            </div> 
+                <!-- tabla de la busqueda-->
+                <div class="col-md-7">
+                    <div class="card my-4" id="resultado">
+                        <div class="card-body">
+                            <!-- resultado de busqueda-->
+                            <ul class="contenedor"></ul>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <td>Id</td>
+                                <td>nombre</td>
+                                <td>Description</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>  
+                                <input type="button" value="Borrar">
+                            </td>
+                        </tr>
+                       
+                        <tbody id="lista"></tbody>  
+                    </table> 
+                </div>
+               
+            </div>
         </div>
-        <hr>
-        <div class="row col-md-8">Apartado 1 </div>
-        <div class="row col-md-4">Apartador 2</div>
-        <footer class="col-md-12">
-            <h3>Pie de página</h3>
-            <!-- 
-            <div class="row col-sm-3">row1</div>
-            <div class="row col-sm-3">row2</div>
-            <div class="row col-sm-3">row3</div>
-            <div class="row col-sm-3">row4</div>
-            -->
-        </footer>
+        <!--Menu-->
+        <div class="container">
+            <div class="menu" id="">
+                <div class=" col-md-7">
+                    <thead>
+                        <tr>
+                            <td><a href="" class="button">Home</a></td>
+                            <td><a href="" class="button">Productos</a></td>
+                            <td><a href="" class="button">Mi compra</a></td>
+                            <td><a href="locales.html" >Locales</a></td>
+                        </tr>
+                    </thead>
+                </div>
+            </div>
+        </div>
+    <!-- 
+     
+-->
+     
+       
+
+<div class="row col-md-8">Apartado 1 </div>
+    <div class="row col-md-4">Apartador 2</div>
+    <footer class="col-md-12">
+     <h5>footer</h5>
+    <!-- 
+        <div class="row col-sm-3">row1</div>
+        <div class="row col-sm-3">row2</div>
+         <div class="row col-sm-3">row3</div>
+        <div class="row col-sm-3">row4</div>
+        -->
+    </footer>
     </body>
 </html>
