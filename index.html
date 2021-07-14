@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <!--<meta charset="UTF-8"> --> 
+       <!-- <meta charset="UTF-8"> -->
         <title>Mi Tienda</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
         crossorigin="anonymous">
-        <!-- Latest compiled and minified CSS
+        <!-- Latest compiled and minified CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        -->
+        
         <!--  jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript 
@@ -16,28 +16,6 @@
        <!-- bootswatch-->
        <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
     
-        <style>/*
-            .header{
-                background-color: aquamarine;
-            }
-            .container{
-                background-color: white;
-            }
-            .tienda{
-                background-color: thistle;
-            }
-          
-            .row-buttons a{
-                line-height-step : 12px;
-                width: 20px;
-                background: black;
-                color: white;
-            }
-            .cuenta{
-                background-color: wheat;
-                text-align: right ;
-            }*/
-        </style>
     </head>
     <body>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,16 +40,16 @@
                 <div class="col-md-5">
                     <div class="card">
                         <div class="card-body">
-                            <!-- form agregar -->
-                            <form>
+                            <!-- formulario de  agregar -->
+                            <form id="form-agregar">
                                 <div class="form-group">
                                     <input type="text" name="" id="nombre" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <input id="descripcion"class="form-control"> 
+                                    <input type="text" id="descripcion"class="form-control"> 
                                 </div><br>
-                                <input type="hidden" id="idnom">
-                                <button type="submit" class=" btn btn-primary btn-block text-center"> Guardar</button>
+                                    <input type="hidden" id="idnom">
+                                <button type="button" id="btnAgregar" class=" btn btn-primary btn-block text-center"> Guardar</button>
                             </form>   
                         </div>
                     </div>

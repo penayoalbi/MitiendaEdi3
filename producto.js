@@ -1,13 +1,17 @@
 $(function(){
+   // var miServidor = 'http://localhost:666/producto';
+    var miServidor = "https://apipenayo.herokuapp.com"
     console.log('producto');
 
-//recibe lo que el usuario esta tipeando
-    $('#buscar').keyup(function(){
+    //recibe lo que el usuario esta tipeando
+   $('#buscar').keyup(function()
+   {
         let buscar = $('#buscar').val();
        //console.log(buscar);
        $.ajax({
-        url:'http://localhost:666/producto',
-        type:'POST',
+           //'http://localhost:666/producto
+        url: miServidor,
+        type:'get',
         data:{buscar: buscar},//enviar el valor del input
         success: function(response){
           //  console.log(response);
@@ -24,62 +28,42 @@ $(function(){
         }
 
        })
-       });
-
     });
 
-
-
-/*
-    $('#registro').click(function(e){
-    console.log('click en registro');
-    var xmlhttp = new XMLHttpRequest();
-    var registro = new FormData();
-    registro.append('nombre',$('nombre').value);
-    registro.append('descripcion',$('descripcion').value);
-    
-    //'http://localhost:666/usuario/new'
-    xmlhttp.open('post','http://localhost:666/producto', true);
-    //seteo el evento
-    xmlhttp.onreadystatechange = function () {
-       //Veo si llego la respuesta del servidor
-       if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+    $('#btnAgregar').click(function (e){
+        
+       e.preventDefault();//que no se recargue la página
+        var xmlhttp = new XMLHttpRequest();
+        var nombre = document.getElementById('nombre').value;
+        var descripcion = document.getElementById('descripcion').value;
+        var datos = new FormData();
+        
+        datos.append('nombre',$('nombre').value);
+        datos.append('descripcion',$('descripcion').value);
+       
+        console.log(nombre);
+        console.log(descripcion);
+        //'http://localhost:666/producto'
+        xmlhttp.open('post',miServidor, true);
+         //seteo el evento
+        xmlhttp.onreadystatechange = function () {
+        //Veo si llego la respuesta del servidor
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
            //Reviso si la respuesta es correcta
            if (xmlhttp.status == 200) {
-               //funcionArealizar(xmlhttp.responseText);
-                console.log( xmlhttp.responseText);   
+               console.log('200');
+             //  console.log( xmlhttp.responseText);   
            }
            else {
                alert("ocurrio un error");
            }
-       }
+        }
    }
-  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-
+    //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
    //envio el mensaje  
-   xmlhttp.send(registro);
+    xmlhttp.send(datos);
 
-});*/
+    })
 
-
-/*
-function BuscarProducto(){
-    $('#btnBuscar').preventDafaul();
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('post','http://localhost:666/Producto',true);
-
-    xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-         //Reviso si la respuesta es correcta
-         if (xmlhttp.status == 200) {
-            funcionArealizar(xmlhttp.responseText);
-        }
-        else {
-            alert("ocurrio un error en el peticion");
-        }
-    }
-    xmlhttp.send();
-    }
-}
-*/
+});

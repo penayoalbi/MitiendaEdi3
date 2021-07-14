@@ -1,6 +1,6 @@
 addEventListener("load",load);
-//var miServidor = "https://apipenayo.herokuapp.com"
-var miServidor ="http://localhost:666";
+var miServidor = "https://apipenayo.herokuapp.com"
+//var miServidor ="http://localhost:666/usuario";
 
 function load(){
     //mensajeAlServido(miServidor,funcionArealizar);
@@ -19,7 +19,7 @@ function login (miServidor, funcionArealizar)
     datos.append('nombre',$('nombre').value);
     datos.append('clave',$('clave').value);
 //'http://localhost:666/usuario/login'
-    xmlhttp.open('get','http://localhost:666/usuario/login', true);
+    xmlhttp.open('get',miServidor, true);
      //seteo el evento
      xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -41,39 +41,7 @@ function login (miServidor, funcionArealizar)
     //envio el mensaje  
     xmlhttp.send(datos);
 }
-/*
-//crear usuario
-function EnviarMensajeServidor (miServidor, funcionArealizar)
-{
-    var xmlhttp = new XMLHttpRequest();
-    var datos = new FormData();
-    datos.append('nombre',$('nombre').value);
-    datos.append('nombre',$('correo').value);
-    datos.append('clave',$('clave').value);
-//'http://localhost:666/usuario/new'
-    xmlhttp.open('post','http://localhost:666/usuario/new', true);
-     //seteo el evento
-     xmlhttp.onreadystatechange = function () {
-        //Veo si llego la respuesta del servidor
-        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
-            //Reviso si la respuesta es correcta
-            if (xmlhttp.status == 200) {
-                //funcionArealizar(xmlhttp.responseText);
-                 console.log( xmlhttp.responseText);   
-                 document.getElementById('respuesta').innerHTML=xmlhttp.responseText;
-            }
-            else {
-                alert("ocurrio un error");
-            }
-        }
-    }
-   xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-   xmlhttp.setRequestHeader("enctype", "multipart/form-data");
- 
-    //envio el mensaje  
-    xmlhttp.send(datos);
-}
-*/
+//registrar usuario
 $('#registro').click(function(e){
     console.log('click en registro');
     var xmlhttp = new XMLHttpRequest();
@@ -82,7 +50,7 @@ $('#registro').click(function(e){
     datos.append('correo',$('correo').value);
     datos.append('clave',$('clave').value);
     //'http://localhost:666/usuario/new'
-    xmlhttp.open('post','http://localhost:666/usuario/new', true);
+    xmlhttp.open('post',miServidor, true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
        //Veo si llego la respuesta del servidor
