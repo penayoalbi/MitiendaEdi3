@@ -6,10 +6,9 @@ $(document).ready(function(){
     //recibe lo que el usuario esta tipeando
    $('#buscar').keyup(function()
    {
-        var buscar = document.getElementById('buscar').value;
+      var buscar = document.getElementById('buscar').value;
        //console.log(buscar);
        $.ajax({
-           //'http://localhost:666/producto
         url: miServidor,
         type:'get',
         data:{buscar: buscar},//enviar el valor del input
@@ -57,8 +56,5 @@ $(document).ready(function(){
          //envio el mensaje  
           xmlhttp.send(datos);
       
-        });
-
-    
-    
+        });  
 });

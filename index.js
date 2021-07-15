@@ -24,7 +24,7 @@ function login(miServidor, funcionArealizar)
     datos.append('nombre',document.getElementById('nombre').value);
     datos.append('clave',document.getElementById('clave').value);
     //'http://localhost:666/usuario/login'
-    xmlhttp.open('post','/login',true);
+    xmlhttp.open('post','/usuario/login',true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -61,7 +61,7 @@ function crearUsuario(){
         datos.append('correo',document.getElementById('correo').value);
         datos.append('clave',document.getElementById('clave').value);
         //'http://localhost:666/usuario/new'
-        xmlhttp.open('post','/new', true);
+        xmlhttp.open('post','/usuario/new', true);
         //seteo el evento
         xmlhttp.onreadystatechange = function () {
            //Veo si llego la respuesta del servidor
