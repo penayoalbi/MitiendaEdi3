@@ -1,5 +1,4 @@
-document.getElementById("btn-registro").addEventListener("click",registro);
-document.getElementById("btn-iniciarSesion").addEventListener("click",iniciarSesion);
+
 document.getElementById("ingresar").addEventListener("click",validar);
 //document.getElementById("registrar").addEventListener("click",validarCampos);
 //addEventListener("load",validar);

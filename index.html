@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <!-- <meta charset="UTF-8"> -->
+        <meta charset="UTF-8"> 
         <title>Mi Tienda</title>
+        <style>
+            .micuenta a{
+                color: antiquewhite;
+            }
+        </style>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
         crossorigin="anonymous">
         <!-- Latest compiled and minified CSS-->
@@ -30,7 +35,7 @@
                     <form class="form-inline my-2 my-lg-0">
                        <!-- Buscar -->
                         <input type="search" id="buscar" placeholder="Buscar producto..." class="form-control mr-sm-2">
-                        <input type="submit" class="btn btn-success my-2 my-sm-0"  id="btnBuscar" value="Buscar">
+                        <input type="submit" id="btnBuscar" class="btn btn-success my-2 my-sm-0"   value="Buscar">
                     </from>
                 </ul>
         </nav>
@@ -43,10 +48,10 @@
                             <!-- formulario de  agregar -->
                             <form id="form-agregar">
                                 <div class="form-group">
-                                    <input type="text" name="" id="nombre" class="form-control">
+                                    <input type="text" name="" id="nombre" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="descripcion"class="form-control"> 
+                                    <input type="text" id="descripcion"class="form-control" required> 
                                 </div><br>
                                     <input type="hidden" id="idnom">
                                 <button type="button" id="btnAgregar" class=" btn btn-primary btn-block text-center"> Guardar</button>
@@ -108,12 +113,8 @@
      
 -->
      
-       
-
-        <div class="row col-md-8">Apartado 1 </div>
-        <div class="row col-md-4">Apartador 2</div>
     <script src="producto.js"></script>
-    </body>
+</body>
     <footer class="col-md-12">
         <h5>footer</h5>
        <!-- 
