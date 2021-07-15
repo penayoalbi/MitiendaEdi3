@@ -1,14 +1,15 @@
 addEventListener("load",load);
 var miServidor = "https://apipenayo.herokuapp.com"
-//var miServidor ="http://localhost:666/usuario";
+//var miServidor = "http://localhost:666/usuario";
+//var miservidor = 'http://localhost:666";
 
 function load(){
     //mensajeAlServido(miServidor,funcionArealizar);
     //document.getElementById('btnIngresar').addEventListener("click",login);
     //document.getElementById("registro").addEventListener("click",EnviarMensajeServidor);
    // document.getElementById('registro').addEventListener("click",crearUsuario);
-    crearUsuario();
-    login();
+    crearUsuario(miServidor, funcionArealizar);
+    login(miServidor, funcionArealizar);
 }
 
 function funcionArealizar(){
@@ -51,7 +52,7 @@ function login(miServidor, funcionArealizar)
 
 }
 //registrar usuario
-function crearUsuario(){
+function crearUsuario(miServidor, funcionArealizar){
     $('#registro').click(e=>{
         e.preventDefault();
         console.log('click en registro');
