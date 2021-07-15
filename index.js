@@ -43,7 +43,7 @@ function login(miServidor, funcionArealizar)
         }
     }
     //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
     //envio el mensaje  
     xmlhttp.send(datos);
 
@@ -79,7 +79,7 @@ function crearUsuario(){
            }
        }
       //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+      //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
        //envio el mensaje  
        xmlhttp.send(datos);
     });
