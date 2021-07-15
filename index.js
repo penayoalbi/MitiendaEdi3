@@ -1,6 +1,6 @@
 addEventListener("load",load);
-//var miServidor = "https://apipenayo.herokuapp.com"
-var miServidor ="http://localhost:666/usuario";
+var miServidor = "https://apipenayo.herokuapp.com"
+//var miServidor ="http://localhost:666/usuario";
 
 function load(){
     //mensajeAlServido(miServidor,funcionArealizar);
@@ -24,7 +24,7 @@ function login(miServidor, funcionArealizar)
     datos.append('nombre',document.getElementById('nombre').value);
     datos.append('clave',document.getElementById('clave').value);
     //'http://localhost:666/usuario/login'
-    xmlhttp.open('post','http://localhost:666/usuario/login',true);
+    xmlhttp.open('post','/login',true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
         //Veo si llego la respuesta del servidor
@@ -61,7 +61,7 @@ function crearUsuario(){
         datos.append('correo',document.getElementById('correo').value);
         datos.append('clave',document.getElementById('clave').value);
         //'http://localhost:666/usuario/new'
-        xmlhttp.open('post','http://localhost:666/usuario/new', true);
+        xmlhttp.open('post','/new', true);
         //seteo el evento
         xmlhttp.onreadystatechange = function () {
            //Veo si llego la respuesta del servidor
