@@ -1,7 +1,6 @@
 addEventListener("load",load);
-var miServidor = "https://apipenayo.herokuapp.com"
-//var miServidor = "http://localhost:666/usuario";
-//var miservidor = 'http://localhost:666";
+//var miServidor = "https://apipenayo.herokuapp.com"
+var miServidor = "http://localhost:666";
 
 function load(){
     //mensajeAlServido(miServidor,funcionArealizar);
@@ -24,7 +23,6 @@ function login(miServidor, funcionArealizar)
     var datos = new FormData();
     datos.append('nombre',document.getElementById('nombre').value);
     datos.append('clave',document.getElementById('clave').value);
-    //'http://localhost:666/usuario/login'
     xmlhttp.open('post',miServidor+'/usuario/login',true);
     //seteo el evento
     xmlhttp.onreadystatechange = function () {
@@ -36,6 +34,8 @@ function login(miServidor, funcionArealizar)
                  console.log( xmlhttp.responseText); 
                  $('#form-login').trigger('reset');
                  document.getElementById('respuesta').innerHTML=xmlhttp.responseText; 
+                 //document.location.assign(index.html);
+                 window.location.replace("index.html");
         
                 }else {
                 alert("ocurrio un error");
@@ -44,13 +44,12 @@ function login(miServidor, funcionArealizar)
         }
     }
     //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+    xmlhttp.setRequestHeader("enctype", "multipart/form-data");
     //envio el mensaje  
     xmlhttp.send(datos);
-
     });
-
 }
+
 //registrar usuario
 function crearUsuario(miServidor, funcionArealizar){
     $('#registro').click(e=>{
@@ -61,7 +60,6 @@ function crearUsuario(miServidor, funcionArealizar){
         datos.append('nombre',document.getElementById('nombre').value);
         datos.append('correo',document.getElementById('correo').value);
         datos.append('clave',document.getElementById('clave').value);
-        //'http://localhost:666/usuario/new'
         xmlhttp.open('post',miServidor+'/usuario/new', true);
         //seteo el evento
         xmlhttp.onreadystatechange = function () {
@@ -80,10 +78,10 @@ function crearUsuario(miServidor, funcionArealizar){
                }
            }
        }
-      //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      //xmlhttp.setRequestHeader("enctype", "multipart/form-data");
-       //envio el mensaje  
-       xmlhttp.send(datos);
+        //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader("enctype", "multipart/form-data");
+        //envio el mensaje  
+        xmlhttp.send(datos);
     });
 }
 

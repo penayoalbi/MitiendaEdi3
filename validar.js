@@ -16,7 +16,7 @@ function validar() {
         alert("Clave esta vacio.");
     }
     else  if(!clave.match(exp)){
-         alert("El password Debe tener al menos un numero y una letra mayuscula.");
+        alert("El password Debe tener al menos un numero y una letra mayuscula.");
     }
     else{
        return true;
@@ -31,7 +31,7 @@ function validarVacio(valor){
         return false;
     }
 }
-/*
+
 function validarCampos(){
     var expCorreo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var nombre=document.getElementById("nombre").value;
@@ -48,5 +48,5 @@ function validarCampos(){
         return true;
     }
 }
-*/
+
 
